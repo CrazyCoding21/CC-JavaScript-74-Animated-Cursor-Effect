@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    cursor: pointer;
+}
+.container{
+    height: 100vh;
+    background: url('../images/bg.jpg');
+    background-size: cover;
+}
+span{
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+    animation: fadeIn 1s linear infinite;
+}
+@keyframes fadeIn {
+    0%,100%{
+        opacity: 0;
+    }
+    20%,80%{
+        opacity: 1;
+    }
+}
+span::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('../images/flower.png');
+    background-size: cover;
+    animation: moveImage 1s linear infinite;
+}
+@keyframes moveImage{
+    0%{
+        transform: translate(0) rotate(0deg);
+    }
+    100%{
+        transform: translate(300px) rotate(360deg);
+    }
+}
